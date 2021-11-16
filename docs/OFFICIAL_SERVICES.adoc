@@ -1,0 +1,42 @@
+:toc:
+:toclevels: 2
+
+= Official resources of IntellectualSites
+
+toc::[]
+
+== Scope of the document
+
+This document outlines all services or accounts connected and operated by IntellectualSites, ordered alphabetically.
+Keyholder services' only purpose is to claim our name. These services are not actively used by us. +
+Any service or account not listed is not affected, owned or controlled by IntellectualSites in any form, unless inherited. +
+For example, if `abc.com/users/intellectualsites` would inherit a resource published at `abc.com` that identifiable forwards to the domain listed, it's clear that this resource is owned by IntellectualSites.
+
+=== Active services
+* Discord Server: link:https://discord.gg/intellectualsites[]
+* Jenkins: link:https://ci.athion.net/[]
+* Maven Repository: link:https://mvn.intellectualsites.com/[]
+
+=== Active accounts
+* bStats: link:https://bstats.org/author/IntellectualSites[]
+* Crowdin: link:https://intellectualsites.crowdin.com/[]
+* Curseforge/dbo: link:https://www.curseforge.com/members/notmyfaulti/projects[]
+* E-Mail: mailto:contact<at>intellectualsites.com[]
+* GitHub: link:https://github.com/IntellectualSites/[]
+* Patreon: link:https://www.patreon.com/IntellectualSites[]
+* PayPal: link:https://paypal.me/AlexanderBrandes[]
+* SpigotMC: link:https://www.spigotmc.org/members/intellectualsites.79996/[]
+
+=== Active domains and namespaces for deployment
+* fastasyncvoxelsniper.com link:http://fastasyncvoxelsniper.com[]
+* fastasyncworldedit.com link:http://fastasyncworldedit.com[]
+* intellectualsites.com link:https://intellectualsites.com[]
+* plotsquared.com: link:https://plotsquared.com/[]
+* schematic.cloud: link:https://api.schematic.cloud[]
+
+=== Keyholder
+* CloudburstMC: link:https://cloudburstmc.org/members/intellectualsites.779/[]
+* Opencollective: link:https://opencollective.com/intellectualsites[]
+* PlaceholderAPI: link:https://api.extendedclip.com/expansions/plotsquared/[]
+* Polymart: link:https://polymart.org/team/intellectualsites.13[]
+* Sponge: link:https://forums.spongepowered.org/u/i-s/[]

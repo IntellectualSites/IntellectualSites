@@ -1,0 +1,292 @@
+:toc:
+:toclevels: 3
+
+= Documentation for maintainers and contributors
+
+toc::[]
+
+== Scope of the document
+
+This document applies to the following components:
+
+* IntellectualSites GitHub Repositories
+
+== Team
+
+=== Communication channels:
+
+* Discord: link:https://discord.gg/intellectualsites[]
+
+=== Roles
+
+* Contributor
+* Documentation Team
+* Project Developers
+* Maintainers
+
+**Contributors** submit pull requests to the IntellectualSites' repositories and review changes submitted by others.
+There are no special preconditions to do so.
+Anyone is welcome to contribute.
+
+**Documentation Team** members have `Write` permissions at the "-Documentation" repositories of FastAsyncWorldEdit and PlotSquared. They can make modifications to the Wiki. +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/documentation-team[@IntellectualSites/documentation-team]
+
+**Project Developers** have `Write` permissions in certain repositories, and are able to merge pull requests.
+They are often tied to specific projects under the IntellectualSites hood. +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/fastasyncworldedit-team[@IntellectualSites/fastasyncworldedit-team] +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/fastasyncvoxelsniper-team[@IntellectualSites/fastasyncvoxelsniper-team] +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/PlotSquared-team[@IntellectualSites/PlotSquared-team] +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/web-team[@IntellectualSites/Web-team]
+
+**Maintainers** have administrative access to all repositories on the organization.
+They review and merge pull requests on a regular basis and handle releases. +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/admins[@IntellectualSites/admins]
+
+=== Ladder
+
+* **Contributors**. Anyone can participate.
+  There is no precondition except having a GitHub account, just submit pull requests or comment on existing ones!
+* **Documentation Team** members are around for a long time and familiar with the software they are documenting.
+They are nominated by project developers.
+* **Project Developers** are contributors who have been invited to join the organization.
+They are nominated by maintainers.
+* **Maintainers** are organization administrators and board members.
+
+== Pull request review process
+
+We need to ensure that submitted pull requests are not only code complete, but also that they do not introduce undesired defects or breaking changes.
+At the same time, we try to make the review process as simple as possible for contributors and maintainers.
+
+=== Review goals
+
+Pull request reviews is not just about reviewing code and accepting them if the code is fine, maintainers ensure feasibility and compatibility of changes, to maintain a good quality of the codebase and documentation, and to ensure there is a consensus between contributors.
+
+==== Ensuring Compatibility
+
+We accept breaking changes when and if it is needed, but our goal is to retain as much compatibility with prior releases of our software as possible.
+It includes both feature compatibility and binary/API compatibility which is important for the plugin ecosystem.
+Although we use link:https://semver.org/[SemVer] to ensure API compatibility, there is no way to confirm external usages in 3rd party (proprietary) plugins which are also a part of the ecosystem.
+To prevent API incompatibilities, do not modify public methods, add new methods if the body has to be changed and deprecate (`@Deprecated`)  existing methods.
+If a project uses Java 11 or higher and a method is subject to removal, you can use `@Deprecated(forRemoval=true)`.
+If you do so, please use the javadoc tag `Use {@link #newMethod}`, to indicate which method should be used.
+
+==== Maintaining Code quality
+
+The baseline of the code doesn't have to be perfect, but we want to ensure that all new code matches basic quality standards:
+If new and public methods are added, regardless they are API or not, add documentation in form of javadocs.
+If you modify public methods that do not have javadocs yet, please add them.
+JUnit tests are not necessary, but if you are familiar with them, you are good to go and add them for matching methods.
+
+==== Code style
+
+We're aware that there are existing inconsistencies in the code, therefore the following requirements only apply for new code.
+
+Our repositories contain `.editorconfig` files, the link:https://plugins.jetbrains.com/plugin/7294-editorconfig[EditorConfig plugin] can pick up to make sure, the code style  in pull requests apply with our standards.
+
+==== Maintaining documentation
+
+When a new user facing change is added, the pull request submitter or a project maintainer can leave a reminder to adjust necessary documentation when merging the pull request.
+The same applies to changelog entries. Maintainers are looking over pull request titles to ensure they display the changes proposed fine, as they are used in changelogs.
+
+==== Building consensus
+
+Not all changes are discussed before they are submitted as pull requests.
+The Discord server, GitHub issues or discussions are used for dicussions about upcoming changes, but sometimes they go straight to pull requests, and we are fine with that, especially with small patches.
+To separate code review from issue or feature discussions, our pull request templates ask you to raise an issue for more complex or major changes, if none is up yet. 
+
+=== Review non-goals
+
+Code reviews do NOT pursue the following goals:
+
+* Accepting/merging any pull request.
+  Not everything is going to be merged, and reviewers are expected to focus on our ecosystem integrity first.
+  We guide contributors and help them to get their changes integrated, but it needs cooperation on both sides.
+  It is **fine** to close invalid and inactive pull requests if there is no activity by a submitter or other contributors.
+* Enforcing a particular coding style.
+  Some of our projects' codebase is created by many contributors, and different files have different designs.
+  Our main goal is to firstly have the code readable by other contributors, the codestyle from the editorconfig can be applied later on.
+* Make contributors fix issues that are not related to the primary topic of the pull request
+** Create follow-up issues instead, it is fine to reference them in comments so that the contributor might want to pick them up
+* Make contributors to have atomic commit history or to squash their pull request
+** Not every contributor is a Git expert, do not request changes in the commit history unless it is necessary. Maintainers will squash-merge pull requests or clean up history if necessary.
+** We want to keep pull requests focused when possible (one feature/fix per pull request),
+   but we can live without it if the additional changes proposed can fit under one topic.
+
+== Issue triage
+
+All of our maintained software has an issue tracker setup in its appropriate GitHub repository.
+This issue tracker is open to all GitHub users.
+
+This section provides some tips and tricks about triaging issues submitted to the issue trackers.
+
+=== Issue tracker structure
+
+Every project has its own issue tracker. It's the second tab from the left side. If you are heading forward to raise a new issue or want to look for resolved issues, you can use the search bar and look for keywords.
+
+=== How to discover untriaged issues?
+
+* Issues with the label `Requires Testing` are not yet looked into by a maintainer or project developer. If such an issue applies to you, please comment on the existing issue.
+If you cannot replicate an issue with the steps provided, please comment as well. Some issues might apply niche behaviors, not everyone user is aware of.
+
+=== Initial triage
+
+Initial issue triage has the following objectives:
+
+* **Perform initial triage of an issue**.
+  Initial triages are not expected to perform a full analysis of the issue (though they are welcome to do so!).
+  The main goal is to ensure that an issue report is legitimate and that it contains enough information to be processed.
+  It is fine to request additional information from submitters.
+* **Verify the issue type**.
+  If an issue is a bug report, apply the label `Bug`. Feature requests are labeled automatically, if the submitter chose the correct template, otherwise exchange the label to `Enhancement`.
+* **Verify the issue metadata**. Server version, server implementation, plugin version, steps to reproduce, etc.
+  Such metadata is useful for further inspections and issue discoverability.
+  There are labels like `Good first issue` that can be applied if an issue submitted can be resolved with ease by a (first time) contributor.
+* **Resolve invalid issues and support requests**
+  Sometimes people use GitHub issues as support portal. That is not unusual, but that is what our discord server is for. Redirect the user there and label their issue with `Question` before closing.
+  If an issue does not answer all fields, apply the label `Invalid` and close it. Let the submitter know why it's invalid, if they provide missing or invalid information, we can reopen the issue at any time.
+* **Resolve duplicates**.
+  Reported duplicates can be resolved by applying the `Duplicate` or `Invalid` label and closing the issue with the keywords `Duplicate of <issue ID>`. GitHub then links the duplicate and original issue.
+
+=== Triage by maintainers
+
+Further triage focuses on confirming the issue and defining a potential resolution.
+It can be performed by Project Developers or Contributors, if they want to dive deeper, or leave it up to maintainers.
+
+Triage objectives:
+
+* **Confirm reported issues**. Try to reproduce the issue or analyze the codebase.
+  If the issue is legitimate, it is great to explicitly confirm it in a first comment.
+* **Define the next step**. If possible, define a potential resolution for the issue.
+  If you do not plan to work on the issue in a foreseeable future, it is great to explicitly highlight that.
+* **Highlight newcomer-friendly issues**.
+  Newcomer-friendly issues are instrumental for an onboarding new code contributors to the projects.
+  If you see a simple issue, but do not plan to work on it, put the `Good first issue` label on it, so that somebody can pick it up.
+
+=== How to scrub issues?
+
+In addition to the initial triage, it is a good practice to sometimes review previously reported issues so that we could minimize the backlog of issues and simplify search by users.
+
+* **Triage reopened issues**. 
+  Same as for newly reported issues, it is great to process reopened issues if they are not acted on by the issue assignees.
+  Often such issues can be resolved with a request to report a new issue if an issue is reopened due to another issue.
+* **Resolve stale untriaged issues**.
+  Issue reporters may become unresponsive before their issue can be fully triaged.
+  If there is a reported issue that does not contain data for reproducing the issue,
+  it is fine to resolve them after a 2-week timeout with the `Invalid` label, if it has been pointed out previously, to provide the information missing.
+  Some repositories may have stale bot enabled, to close untriaged issues automatically after 60 days within a grace period of 7 days.
+* **Resolve/update obsolete issues**. 
+  Sometimes tissues become obsolete due to other changes in the code, and such issues can be closed. 
+
+=== Triaging requests for enhancements
+
+Requests for enhancements (RFEs) include the `Enhancement` label.
+The process to triage them might be different from bug reports, because it is not always possible to say whether a request should be implemented.
+In the case of doubt, it is fine to just skip the creation of an issue or notify a maintainer who could advise.
+
+=== Responding to pings in triaged issues
+
+Some submitters and users tend to ping (triage) contributors and ask about the fix ETA.
+It is fine to not answer these questions on such pings and to refer requestors to this document, project developers or contributors are not responsible for handling the issue after initial triage.
+
+== Merge process
+
+=== Common merge process
+
+==== Step 1: Maintainer checklist
+
+A merge process can be initiated once a pull request matches the requirements:
+
+* The pull request is compliant with the requirements to submitters (see our link:https://github.com/IntellectualSites/.github/blob/main/.github/PULL_REQUEST_TEMPLATE.md[pull request template])
+* There are at least 2 maintainer approvals for the pull request and no outstanding requests for change.
+** Pull requests that target documentation changes, such as typo fixes, may only require the approval from one maintainer or project developer.
+* Conversations in the pull request are over or it is explicit that a reviewer does not block the change (often indicated by clicking the `Resolve Conversation` button on line comments)
+* Changelog entries in the PR title are correct and reflect the current, final state of the PR.
+* The proper labels for the PR are assigned. For example `Bugfix` or `Feature` for automatic changelog generation.
+* If the change needs end users to be aware of it when upgrading, for example when modifying permissions or long term behavior, outline it within a comment on the PR.
+
+==== Step 2: Is it a good time to merge?
+
+* If a PR has passed the review process, but may be blocked by other PRs, for example at other projects, make sure to add a comment explaining why it was put on hold. 
+* Very large changes or major refactors may not be merged before smaller PRs to keep the rebase noise as small as possible.
+
+==== Step 3: Marking for merge
+
+Once the checklist is passed, a maintainer can mark the pull request for merge.
+
+* An explicit comment is added to the pull request so that other repository watchers are notified and the label `Ready for merge` is applied while removing the label `Ready for review`.
+  Example: _Thanks to all contributors! We consider this change as ready to be merged towards the next release. It may be merged after 24hours if there is no negative feedback_
+A grace period allows previous reviewers to leave final concerns to prevent regressions.
+
+==== Step 4: Merge!
+
+A maintainer merges the change after allowing sufficient time for comment (if needed).
+After that, the change will be landed in the next release.
+
+=== Exceptions
+
+* Security fixes use a different process.
+  They are reviewed and integrated by maintainers at any time.
+* 24 hours waiting period is not required for:
+** changes that do not result in changes to the primary functionality, such as typo fixes in documentation or translation files.
+** changes that do not affect the production code: GitHub workflow tweaks, bot configurations, etc.
+** Broken main branch builds
+
+=== Squashing pull requests or not?
+
+Sometimes we have pull requests which include dozens of commits including non-substantial changes (merge commits, addressing review comments, etc.).
+We do not require contributors to spend time on cleaning it up, because maintainers can squash PRs during the merge.
+
+At the same time, we do not require any pull request to be merged as single commit.
+Multiple commits are useful in many cases.
+
+When do we merge pull requests as is?
+
+* There is only one commit with a reasonable commit message
+* There are multiple atomic commits. Each commit has a reasonable message and can be compiled on its own.
+** Example:
+*** **Commit 1**: `Fixes #1234` - Fix the obvious issue
+*** **Commit 2**: `Fixes #1234` - Fix the underlying issue
+* There are multiple commit authors who expressed the desire to keep commit history as is.
+  By default, we do not consider multiple authors as a blocker for squash, because GitHub link:https://help.github.com/en/github/committing-changes-to-your-project/creating-a-commit-with-multiple-authors[supports co-authors].
+
+When do we squash commits?
+
+* We squash commits when maintainers decide to do so, usually when the conditions above are met.
+* There is no strong requirement to squash merge pull requests at the moment, so there might be deviations from the merge policy in practice.
+* Commits should NOT be squashed, when merging feature or bugfix branches into the main branch. Here we want to preserve all commits, squashing of individual PRs should be done before.
+
+== Release process
+
+=== The release cycle explained
+
+* Releases are drafted by maintainers. The projects that use SemVer to determine versioning, are released on a bi-weekly cycle. To see when the next cycle starts, take a look at the
+link:https://calendar.google.com/calendar/embed?src=n6bgtalqcfvqmhkfptusj3td5o%40group.calendar.google.com&ctz=Europe%2FBerlin[release calendar].
+* We aim to push releases during the first half of the week, for example on Tuesdays or Wednesdays.
+* If there is no release by Friday of the first week, the ongoing release cycle has been skipped.
+** Additional information about skipped cycles _can_ be obtained from the release calendar.
+* Releases are not pushed on weekends.
+* Releases may not be exclusive to the bi-weekly cycle, but releases outside the release cycle do not modify it.
+*** Example: A release on a Wednesday followed by an important regression fix on next weeks Monday does not postpone the release from the following week. 
+* Exemptions of the cycle are possible:
+** Security fixes can be released at any time outside the cycle.
+** Releases are skipped if no notable changes for the end user would be included in a release.
+*** Example: Dependency updates, code refactoring, etc.
+
+=== Maintainers: Before the release
+
+Push a commit that changes the projects' version from snapshot to a release build. In the same run you can put a tag on it (`git tag -a 1.0.0 -m "Release 1.0.0"` for example). You may tag it later by providing a short sha instead of a message.
+You then push the tag to origin (`git push origin 1.0.0` for example). No further commits are accepted at this time.
+
+=== Maintainers: Release!
+
+The `Releases` tab on GitHub has assembled a changelog draft. Link the tag with it you pushed previously. +
+If all GitHub actions for the release commit you pushed previously have reported a complete and successful status, pushing a release and deploying a new version to the central repository was successful (Make sure to look over the database before closing!). +
+The generated changelog may be reused on different deployment portals, either abbreviated or modified, but retain a link to the original source. +
+A commit increasing the SemVer and returning to snapshot builds for future development iterations finishes the release process.
+
+== Feedback
+
+The process documented in this document is not set in stone.
+If you see any issues or want to suggest improvements,
+just submit a pull request or contact us in the communication channels referenced above.
+Any feedback will be appreciated!
