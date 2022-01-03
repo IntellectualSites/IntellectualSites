@@ -198,7 +198,7 @@ A merge process can be initiated once a pull request matches the requirements:
 
 * The pull request is compliant with the requirements to submitters (see our link:https://github.com/IntellectualSites/.github/blob/main/.github/PULL_REQUEST_TEMPLATE.md[pull request template])
 * There are at least 2 maintainer approvals for the pull request and no outstanding requests for change.
-** Pull requests that target documentation changes, such as typo fixes, may only require the approval from one maintainer or project developer.
+** Pull requests that target documentation changes or minor changes, such as typo fixes, may only require the approval from one maintainer or project developer.
 * Conversations in the pull request are over or it is explicit that a reviewer does not block the change (often indicated by clicking the `Resolve Conversation` button on line comments)
 * Changelog entries in the PR title are correct and reflect the current, final state of the PR.
 * The proper labels for the PR are assigned. For example `Bugfix` or `Feature` for automatic changelog generation.
