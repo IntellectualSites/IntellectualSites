@@ -274,10 +274,7 @@ link:https://calendar.google.com/calendar/embed?src=n6bgtalqcfvqmhkfptusj3td5o%4
 
 === Maintainers: Release!
 
-The `Releases` tab on GitHub has assembled a changelog draft. Edit it and select the tag you want to associate the release with. +
-If the GitHub actions workflow reported a complete and successful result for the release commit, a new version has been published to the central repository. +
-The generated changelog may be reused on different deployment portals, either abbreviated or modified, but retain a link to the original source. +
-A commit increasing the SemVer and returning to snapshot builds for future development iterations finishes the release process.
+How to do a release in particular, can be obtained from the link:https://github.com/IntellectualSites/IntellectualSites/blob/main/docs/release-helper.adoc[release helper document].
 
 == Feedback
 
