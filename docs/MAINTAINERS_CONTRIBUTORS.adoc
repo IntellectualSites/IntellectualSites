@@ -213,7 +213,7 @@ A merge process can be initiated once a pull request matches the requirements:
 
 Once the checklist is passed, a maintainer can mark the pull request for merge.
 
-* An explicit comment is added to the pull request so that other repository watchers are notified and the label `Ready for merge` is applied while removing the label `Ready for review`.
+* An explicit comment is added to the pull request so that other repository watchers are notified and the label `Ready for merge` is applied.
   Example: _Thanks to all contributors! We consider this change as ready to be merged towards the next release. It may be merged after 24hours if there is no negative feedback_
 A grace period allows previous reviewers to leave final concerns to prevent regressions.
 
