@@ -13,7 +13,7 @@ This document helps developers and maintainers to draft releases.
 
 == Update the codebase
 
-* If you can't push to the default branch, push the work to another branch a maintainer will then merge (not squash!). Every bullet point is a commit.
+* If you can't push to the default branch, push the work to another branch a maintainer will then merge (not squash!). Every number is a commit.
 
 ** 1. Replace all `@since TODO` and `@deprecated(since = "TODO")` in the code with the version you look forward to release.
 ** 2. Remove `-SNAPSHOT` in `build.gradle.kts` or adjust the version format, depending on the project.
@@ -24,8 +24,6 @@ This document helps developers and maintainers to draft releases.
 == Publish the changelog
 
 If you click on the "Releases" tab on GitHub, you see a draft. Edit the draft and make sure the tag fits the version you want to release. +
-Before you save the modification and publish it, go thru the pull requests listed and ensure that appropriate user guides are proposed, if the last checkbox on the maintainer checklist of a PR is ticked. You can copy and paste these guides directly into the release tab.
-If that is done, you save your edits and they are published. +
 You can copy the release tab changelogs and use them on Discord or other platforms, where we announce our changes.
 
 == Publish the API
@@ -41,4 +39,4 @@ dev.bukkit.org moderates submitted files by "first in first out". The moderation
 
 '''
 
-If you need help, don't hesitate to ask maintainers, who did releases in the past.
+If you need help, don't hesitate to ask maintainers who did releases in the past.
