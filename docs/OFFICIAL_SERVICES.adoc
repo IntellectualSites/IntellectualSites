@@ -15,7 +15,6 @@ For example, if `abc.com/users/intellectualsites` would inherit a resource publi
 === Active services
 * Discord Server: link:https://discord.gg/intellectualsites[]
 * Jenkins: link:https://ci.athion.net/[]
-* ~~Maven Repository: link:https://mvn.intellectualsites.com/[]~~ Sunset as of January, the 24th 2022
 
 === Active accounts
 * bStats: link:https://bstats.org/author/IntellectualSites[]
