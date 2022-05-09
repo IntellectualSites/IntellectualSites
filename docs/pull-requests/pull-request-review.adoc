@@ -39,7 +39,7 @@ A grace period of 24 hours allows previous reviewers to leave final concerns to 
 
 ==== Step 4: Merge!
 
-A maintainer or project developer merges the PR.
+If all checks are passing, a project developer or maintainer goes ahead and merges the pull request.
 
 === Exceptions
 
