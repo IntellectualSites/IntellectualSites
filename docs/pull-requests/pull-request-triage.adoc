@@ -1,0 +1,70 @@
+:toc:
+:toclevels: 3
+
+= Documentation for maintainers and contributors
+
+toc::[]
+
+== Scope of the document
+
+* This document outlines how we triage and pull requests.
+
+== Pull request review process
+
+We need to ensure that submitted pull requests are not only code complete, but also that they do not introduce undesired defects or breaking changes.
+At the same time, we try to make the review process as simple as possible for contributors and maintainers.
+
+=== Review goals
+
+Pull request reviews is not just about reviewing code and accepting them if the code is fine, maintainers ensure feasibility and compatibility of changes, to maintain a good quality of the codebase and documentation, and to ensure there is a consensus between contributors.
+
+==== Ensuring Compatibility
+
+We accept breaking changes when and if it is needed, but our goal is to retain as much compatibility with prior releases of our software as possible.
+It includes both feature compatibility and binary/API compatibility which is important for the plugin ecosystem.
+Although we use link:https://semver.org/[SemVer] to ensure API compatibility, there is no way to confirm external usages in 3rd party (proprietary) plugins which are also a part of the ecosystem.
+To prevent API incompatibilities, do not modify public methods, add new methods if the body has to be changed and deprecate (`@Deprecated`)  existing methods.
+If a project uses Java 11 or higher and a method is subject to removal, you can use `@Deprecated(forRemoval=true, since="TODO")`.
+If you do so, please use the javadoc tag `Use {@link #newMethod}`, to indicate which method should be used.
+
+==== Maintaining Code quality
+
+The baseline of the code doesn't have to be perfect, but we want to ensure that all new code matches basic quality standards:
+If new and public methods are added, regardless they are API or not, add documentation in form of javadocs.
+If you modify public methods that do not have javadocs yet, please add them.
+JUnit tests are not necessary, but if you are familiar with them, you are good to go and add them for matching methods.
+
+==== Code style
+
+We're aware that there are existing inconsistencies in the code, therefore the following requirements only apply for new code.
+
+Our repositories contain `.editorconfig` files, the link:https://plugins.jetbrains.com/plugin/7294-editorconfig[EditorConfig plugin] can pick up to make sure, the code style  in pull requests apply with our standards.
+
+==== Maintaining documentation
+
+When a new user facing change is added, the pull request submitter or a project maintainer can leave a reminder to adjust necessary documentation when merging the pull request.
+The same applies to changelog entries. Maintainers are looking over pull request titles to ensure they display the changes proposed fine, as they are used in changelogs.
+
+==== Building consensus
+
+Not all changes are discussed before they are submitted as pull requests.
+The Discord server, GitHub issues or discussions are used for dicussions about upcoming changes, but sometimes they go straight to pull requests, and we are fine with that, especially with small patches.
+To separate code review from issue or feature discussions, our pull request templates ask you to raise an issue for more complex or major changes, if none is up yet.
+
+=== Review non-goals
+
+Code reviews do NOT pursue the following goals:
+
+* Accepting/merging any pull request.
+Not everything is going to be merged, and reviewers are expected to focus on our ecosystem integrity first.
+We guide contributors and help them to get their changes integrated, but it needs cooperation on both sides.
+It is **fine** to close invalid and inactive pull requests if there is no activity by a submitter or other contributors.
+* Enforcing a particular coding style.
+Some of our projects' codebase is created by many contributors, and different files have different designs.
+Our main goal is to firstly have the code readable by other contributors, the codestyle from the editorconfig can be applied later on.
+* Make contributors fix issues that are not related to the primary topic of the pull request
+** Create follow-up issues instead, it is fine to reference them in comments so that the contributor might want to pick them up
+* Make contributors to have atomic commit history or to squash their pull request
+** Not every contributor is a Git expert, do not request changes in the commit history unless it is necessary. Maintainers will squash-merge pull requests or clean up history if necessary.
+** We want to keep pull requests focused when possible (one feature/fix per pull request),
+but we can live without it if the additional changes proposed can fit under one topic.

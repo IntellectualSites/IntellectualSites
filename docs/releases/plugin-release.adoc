@@ -1,0 +1,42 @@
+:toc:
+:toclevels: 2
+:icons: font
+
+
+= Howto: Release
+
+toc::[]
+
+== Scope of the document
+
+This document helps developers and maintainers to draft releases.
+
+== Update the codebase
+
+* If you can't push to the default branch, push the work to another branch a maintainer will then merge (not squash!). Every number is a commit.
+
+** 1. Replace all `@since TODO` and `@deprecated(since = "TODO")` in the code with the version you look forward to release.
+** 2. Remove `-SNAPSHOT` in `build.gradle.kts` or adjust the version format, depending on the project.
+** 3. Increase the version, for example, if we release 1.0.0, increase it to 1.0.1-SNAPSHOT.
+
+* Create a pull request, if all checks passed, GitHub allows you to merge the branch. If there are errors, ping `@IntellectualSites/core-team`.
+
+== Publish the changelog
+
+If you click on the "Releases" tab on GitHub, you see a draft. Edit the draft and make sure the tag fits the version you want to release. +
+You can copy the release tab changelogs and use them on Discord or other platforms, where we announce our changes.
+
+== Publish the API
+
+If a project has an API, it's deployed to the central repository automatically within the release pull request. If there is an issue with that, the GitHub action lets you know.
+
+== Publish the end user artifact
+
+Upload the release artifact (not the artifact with the already increased build number!) to either Spigot or dev.bukkit.org and paste the previously assembled changelog in the changelog field.
+
+[NOTE]
+dev.bukkit.org moderates submitted files by "first in first out". The moderation times are Sunday, Monday, Tuesday, Wednesday, Thursday: 9:00 AM - 5:00 PM GMT.
+
+'''
+
+If you need help, don't hesitate to ask maintainers who did releases in the past.

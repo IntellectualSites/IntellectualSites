@@ -1,0 +1,55 @@
+:toc:
+:toclevels: 3
+
+= Documentation for maintainers and contributors
+
+toc::[]
+
+== Scope of the document
+
+* This document outlines how we review pull requests.
+
+== Merge process
+
+=== Common merge process
+
+==== Step 1: Maintainer checklist
+
+A merge process can be initiated once a pull request matches the requirements:
+
+* The pull request is compliant with the requirements to submitters (see our link:https://github.com/IntellectualSites/.github/blob/main/.github/PULL_REQUEST_TEMPLATE.md[pull request template])
+* There are at least 2 project developer approvals for the pull request and no outstanding requests for change.
+** Pull requests that target documentation changes or minor changes, such as typo fixes, may only require the approval from one maintainer or project developer.
+* Conversations in the pull request are over, or it is explicit that a reviewer does not block the change (often indicated by clicking the `Resolve Conversation` button on line comments)
+* Changelog entries in the PR title are correct and reflect the current, final state of the PR.
+* The proper labels for the PR are assigned. For example `Bugfix` or `Feature` for automatic changelog generation.
+* If the change needs end users to be aware of it when upgrading, for example when modifying permissions or long term behavior, outline it within a comment on the PR.
+
+==== Step 2: Is it a good time to merge?
+
+* If a PR has passed the review process, but may be blocked by other PRs, for example at other projects, make sure to add a comment explaining why it was put on hold.
+* Very large changes or major refactors may not be merged before smaller PRs to keep the rebase noise as small as possible.
+
+==== Step 3: Marking for merge
+
+Once the checklist is passed, a maintainer can mark the pull request for merge.
+
+* An explicit comment is added to the pull request so that other repository watchers are notified and the label `Ready for merge` is applied.
+A grace period allows previous reviewers to leave final concerns to prevent regressions.
+
+==== Step 4: Merge!
+
+A maintainer or project developer merges the PR.
+
+=== Exceptions
+
+* Security fixes use a different process.
+They are reviewed and integrated by maintainers at any time.
+* 24 hours waiting period is not required for:
+** changes that do not result in changes to the primary functionality, such as typo fixes in documentation or translation files.
+** changes that do not affect the production code: GitHub workflow tweaks, bot configurations, etc.
+** Broken main branch builds.
+
+=== Should I squash a PR or not?
+
+We squash all pull requests, unless a PR is explicitly marked as not to be squashed.

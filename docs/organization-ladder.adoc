@@ -1,0 +1,47 @@
+:toc:
+:toclevels: 3
+
+= Documentation for maintainers and contributors
+
+toc::[]
+
+== Scope of the document
+
+* This document outlines our team structure.
+
+== Team
+
+=== Roles
+
+* Contributor
+* Documentation Team
+* Project Developers
+* Maintainers
+
+**Contributors** submit pull requests to the IntellectualSites' repositories and review changes submitted by others.
+There are no special preconditions to do so.
+Anyone is welcome to contribute.
+
+**Documentation Team** members have `Write` permissions at the "-Documentation" repositories of FastAsyncWorldEdit and PlotSquared. They can make modifications to the Wiki. +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/documentation-team[@IntellectualSites/documentation-team]
+
+**Project Developers** have `Write` permissions in certain repositories, and are able to merge pull requests.
+They are often tied to specific projects under the IntellectualSites hood. +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/fastasyncworldedit-team[@IntellectualSites/fastasyncworldedit-team] +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/fastasyncvoxelsniper-team[@IntellectualSites/fastasyncvoxelsniper-team] +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/PlotSquared-team[@IntellectualSites/PlotSquared-team] +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/web-team[@IntellectualSites/Web-team]
+
+**Maintainers** have administrative access to all repositories on the organization.
+They review and merge pull requests on a regular basis and handle releases. +
+GitHub team: link:https://github.com/orgs/IntellectualSites/teams/admins[@IntellectualSites/admins]
+
+=== Ladder
+
+* **Contributors**. Anyone can participate.
+There is no precondition except having a GitHub account, just submit pull requests or comment on existing ones!
+* **Documentation Team** members are around for a long time and familiar with the software they are documenting.
+They are nominated by project developers.
+* **Project Developers** are contributors who have been invited to join the organization.
+They are nominated by maintainers.
+* **Maintainers** are organization administrators.

@@ -1,0 +1,71 @@
+:toc:
+:toclevels: 3
+
+= Documentation for maintainers and contributors
+
+toc::[]
+
+== Scope of the document
+
+* This document outlines how we triage issues.
+
+== Issue triage
+
+All of our maintained software has an issue tracker setup in its appropriate GitHub repository.
+This issue tracker is open to all GitHub users.
+
+This section provides some tips and tricks about triaging issues submitted to the issue trackers.
+
+=== Issue tracker structure
+
+Every project has its own issue tracker. It's the second tab from the left side. If you are heading forward to raise a new issue or want to look for resolved issues, you can use the search bar and look for keywords.
+
+=== How to discover untriaged issues?
+
+* Issues with the label `Requires Testing` are not yet looked into by a maintainer or project developer. If such an issue applies to you, please comment on the existing issue.
+If you cannot replicate an issue with the steps provided, please comment as well. Some issues might apply niche behaviors, not everyone user is aware of.
+
+=== Initial triage
+
+Initial issue triage has the following objectives:
+
+* **Perform initial triage of an issue**.
+Initial triages are not expected to perform a full analysis of the issue (though they are welcome to do so!).
+The main goal is to ensure that an issue report is legitimate and that it contains enough information to be processed.
+It is fine to request additional information from submitters.
+* **Verify the issue type**.
+If an issue is a bug report, apply the label `Bug`. Feature requests are labeled automatically, if the submitter chose the correct template, otherwise exchange the label to `Enhancement`.
+* **Verify the issue metadata**. Server version, server implementation, plugin version, steps to reproduce, etc.
+Such metadata is useful for further inspections and issue discoverability.
+There are labels like `Good first issue` that can be applied if an issue submitted can be resolved with ease by a (first time) contributor.
+* **Resolve invalid issues and support requests**
+Sometimes people use GitHub issues as support portal. That is not unusual, but that is what our discord server is for. Redirect the user there and label their issue with `Question` before closing.
+If an issue does not answer all fields, apply the label `Invalid` and close it. Let the submitter know why it's invalid, if they provide missing or invalid information, we can reopen the issue at any time.
+* **Resolve duplicates**.
+Reported duplicates can be resolved by applying the `Duplicate` or `Invalid` label and closing the issue with the keywords `Duplicate of <issue ID>`. GitHub then links the duplicate and original issue.
+
+=== Triage by maintainers
+
+Further, triage focuses on confirming the issue and defining a potential resolution.
+It can be performed by Project Developers or Contributors, if they want to dive deeper, or leave it up to maintainers.
+
+Triage objectives:
+
+* **Confirm reported issues**. Try to reproduce the issue or analyze the codebase.
+If the issue is legitimate, it is great to explicitly confirm it in a first comment.
+* **Define the next step**. If possible, define a potential resolution for the issue.
+If you do not plan to work on the issue in a foreseeable future, it is great to explicitly highlight that.
+* **Highlight newcomer-friendly issues**.
+Newcomer-friendly issues are instrumental for an onboarding new code contributors to the projects.
+If you see a simple issue, but do not plan to work on it, put the `Good first issue` label on it, so that somebody can pick it up.
+
+=== Triaging requests for enhancements
+
+Requests for enhancements (RFEs) include the `Enhancement` label.
+The process to triage them might be different from bug reports, because it is not always possible to say whether a request should be implemented.
+In the case of doubt, it is fine to just skip the creation of an issue or notify a maintainer who could advise.
+
+=== Responding to pings in triaged issues
+
+Some submitters and users tend to ping (triage) contributors and ask about the fix ETA.
+It is fine to not answer these questions on such pings and to refer actors to this document, project developers or contributors are not responsible for handling the issue after initial triage.

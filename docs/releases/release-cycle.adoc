@@ -1,0 +1,29 @@
+:toc:
+:toclevels: 2
+:icons: font
+
+
+= Howto: Release
+
+toc::[]
+
+== Scope of the document
+
+This document outlines our release cycle.
+
+== Release process
+
+=== The release cycle explained
+
+* Releases are drafted by maintainers. The projects that use SemVer to determine versioning, are released on a bi-weekly cycle. To see when the next cycle starts, take a look at the
+link:https://calendar.google.com/calendar/embed?src=n6bgtalqcfvqmhkfptusj3td5o%40group.calendar.google.com&ctz=Europe%2FBerlin[release calendar].
+* We aim to push releases during the first half of the week, for example on Tuesdays or Wednesdays.
+* If there is no release by Friday of the first week, the ongoing release cycle has been skipped.
+** Additional information about skipped cycles _can_ be obtained from the release calendar alongside confirmed releases.
+* Releases are not pushed on weekends.
+* Releases may not be exclusive to the bi-weekly cycle, but releases outside the release cycle do not modify it.
+*** Example: A release on a Wednesday followed by an important regression fix on next weeks Monday does not postpone the release from the following week.
+* Exemptions of the cycle are possible:
+** Security fixes can be released at any time outside the cycle.
+** Releases are skipped if no notable changes for the end user would be included in a release.
+*** Example: Dependency updates, code refactoring, etc.
