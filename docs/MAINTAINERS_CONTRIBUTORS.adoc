@@ -50,7 +50,7 @@ GitHub team: link:https://github.com/orgs/IntellectualSites/teams/admins[@Intell
 They are nominated by project developers.
 * **Project Developers** are contributors who have been invited to join the organization.
 They are nominated by maintainers.
-* **Maintainers** are organization administrators and board members.
+* **Maintainers** are organization administrators.
 
 == Pull request review process
 
@@ -67,7 +67,7 @@ We accept breaking changes when and if it is needed, but our goal is to retain a
 It includes both feature compatibility and binary/API compatibility which is important for the plugin ecosystem.
 Although we use link:https://semver.org/[SemVer] to ensure API compatibility, there is no way to confirm external usages in 3rd party (proprietary) plugins which are also a part of the ecosystem.
 To prevent API incompatibilities, do not modify public methods, add new methods if the body has to be changed and deprecate (`@Deprecated`)  existing methods.
-If a project uses Java 11 or higher and a method is subject to removal, you can use `@Deprecated(forRemoval=true)`.
+If a project uses Java 11 or higher and a method is subject to removal, you can use `@Deprecated(forRemoval=true, since="TODO")`.
 If you do so, please use the javadoc tag `Use {@link #newMethod}`, to indicate which method should be used.
 
 ==== Maintaining Code quality
