@@ -35,7 +35,7 @@ A merge process can be initiated once a pull request matches the requirements:
 Once the checklist is passed, a maintainer can mark the pull request for merge.
 
 * An explicit comment is added to the pull request so that other repository watchers are notified and the label `Ready for merge` is applied.
-A grace period allows previous reviewers to leave final concerns to prevent regressions.
+A grace period of 24 hours allows previous reviewers to leave final concerns to prevent regressions.
 
 ==== Step 4: Merge!
 
