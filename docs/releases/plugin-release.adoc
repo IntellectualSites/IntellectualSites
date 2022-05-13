@@ -26,16 +26,20 @@ This document helps developers and maintainers to draft releases.
 If you click on the "Releases" tab on GitHub, you see a draft. Edit the draft and make sure the tag fits the version you want to release. +
 You can copy the release tab changelogs and use them on Discord or other platforms, where we announce our changes.
 
-== Publish the API
-
-If a project has an API, it's deployed to the central repository automatically within the release pull request. If there is an issue with that, the GitHub action lets you know.
-
 == Publish the end user artifact
 
-Upload the release artifact (not the artifact with the already increased build number!) to either Spigot or dev.bukkit.org and paste the previously assembled changelog in the changelog field.
+=== Special treatment
+==== FastAsyncWorldEdit
+
+On Jenkins link:https://ci.athion.net/job/FastAsyncWorldEdit/[Jenkins] we're using the release plugin to highlight releases. Specify the version you want to release and hit the button link:https://ci.athion.net/job/FastAsyncWorldEdit/release/[here].
+
+==== PlotSquared
+For PlotSquared, add a `-Premium` suffix to the build step, if you're building the artifact. md_5 recommended us to do that.
+
+Upload the release artifact (not the artifact with the already increased build number!) to either Spigot or dev.bukkit.org, if the plugin is not distributed from external sources, and paste the previously assembled changelog in the changelog field.
 
 [NOTE]
-dev.bukkit.org moderates submitted files by "first in first out". The moderation times are Sunday, Monday, Tuesday, Wednesday, Thursday: 9:00 AM - 5:00 PM GMT.
+dev.bukkit.org moderates submitted files by "first in first out" rule. The moderation times are Sunday, Monday, Tuesday, Wednesday, Thursday: 9:00 AM - 5:00 PM GMT.
 
 '''
 
