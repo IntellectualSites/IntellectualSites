@@ -38,6 +38,8 @@ For PlotSquared, add a `-Premium` suffix to the build step, if you're building t
 
 Upload the release artifact (not the artifact with the already increased build number!) to either Spigot or dev.bukkit.org, if the plugin is not distributed from external sources, and paste the previously assembled changelog in the changelog field.
 
+If you are unable to publish a release on a distribution platform, let a project maintainer know beforehand.
+
 [NOTE]
 dev.bukkit.org moderates submitted files by "first in first out" rule. The moderation times are Sunday, Monday, Tuesday, Wednesday, Thursday: 9:00 AM - 5:00 PM GMT.
 
