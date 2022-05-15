@@ -41,6 +41,10 @@ If you are unable to publish a release on a distribution platform, let a project
 [NOTE]
 dev.bukkit.org moderates submitted files by "first in first out" rule. The moderation times are Sunday, Monday, Tuesday, Wednesday, Thursday: 9:00 AM - 5:00 PM GMT.
 
+== Update the documentation
+
+Update the API version of the FastAsyncWorldEdit and PlotSquared documentation on the repositories. An example commit can be found here: https://github.com/IntellectualSites/plotsquared-documentation/commit/6b2d647fcbc410f6db165bddf7b164b6c7c63742
+
 '''
 
 If you need help, don't hesitate to ask maintainers who did releases in the past.
