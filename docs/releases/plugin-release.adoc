@@ -13,13 +13,11 @@ This document helps developers and maintainers to draft releases.
 
 == Update the codebase
 
-* If you can't push to the default branch, push the work to another branch a maintainer will then merge (not squash!). Every number is a commit.
+Every number is a commit.
 
 ** 1. Replace all `@since TODO` and `@deprecated(since = "TODO")` in the code with the version you look forward to release.
-** 2. Remove `-SNAPSHOT` in `build.gradle.kts` or adjust the version format, depending on the project.
-** 3. Increase the version, for example, if we release 1.0.0, increase it to 1.0.1-SNAPSHOT.
-
-* Create a pull request, if all checks passed, GitHub allows you to merge the branch. If there are errors, ping `@IntellectualSites/core-team`.
+** 2. Remove `-SNAPSHOT` in `build.gradle.kts` or adjust the version format, depending on the project. You may need to adjust the version too, in case you don't want to release a patch version but a minor one.
+** 3. If all checks are green, increase the version, for example, if we release 1.0.0, increase it to 1.0.1-SNAPSHOT.
 
 == Publish the changelog
 
