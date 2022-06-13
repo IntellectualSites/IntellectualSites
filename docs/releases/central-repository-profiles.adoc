@@ -30,6 +30,8 @@ This document lists our release profiles and the people with release permissions
 The following maintainers and project developers have access to all profiles named above:
 link:https://github.com/Citymonstret[@Citymonstret], link:https://github.com/dordsor21[@dordsor21], link:https://github.com/NotMyFault[@NotMyFault].
 
+Project developers and maintainers not listed can request access at any time. A project maintainer will file a ticket on their behalf on the sonatype issue tracker.
+
 == Signed artifacts
 
 Artifacts are released through GitHub actions and signed with link:https://github.com/NotMyFault[@NotMyFault]'s key. + 
