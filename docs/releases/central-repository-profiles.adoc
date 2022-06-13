@@ -30,7 +30,7 @@ This document lists our release profiles and the people with release permissions
 The following maintainers and project developers have access to all profiles named above:
 link:https://github.com/Citymonstret[@Citymonstret], link:https://github.com/dordsor21[@dordsor21], link:https://github.com/NotMyFault[@NotMyFault].
 
-Project developers and maintainers not listed can request access at any time. A project maintainer will file a ticket on their behalf on the sonatype issue tracker.
+Project developers and maintainers not listed can request access at any time. A maintainer listed will file a ticket on their behalf on the sonatype issue tracker to request a permisison update to add the requester.
 
 == Signed artifacts
 
