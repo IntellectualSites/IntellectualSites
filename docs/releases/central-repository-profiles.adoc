@@ -1,0 +1,37 @@
+:toc:
+:toclevels: 2
+:icons: font
+
+
+= Release profiles available for the central repository (repo.maven.apache.org)
+
+toc::[]
+
+== Scope of the document
+
+This document lists our release profiles and the people with release permissions. All profiles are avilable on https://s01.oss.sonatype.org/.
+
+== Available profiles
+
+* com.fastasyncworldedit
+* com.intellectualsites (group header, not up for deployment)
+** com.intellectualsites.arkitektonika
+** com.intellectualsites.bom
+** com.intellectualsites.fastasyncvoxelsniper
+** com.intellectualsites.http
+** com.intellectualsites.mvdwplaceholderapi
+** com.intellectualsites.paster
+** com.intellectualsites.prtree
+** com.intellectualsites.rorledning
+* com.plotsquared
+
+== Release permission
+
+The following maintainers and project developers have access to all profiles named above:
+link:https://github.com/Citymonstret[@Citymonstret], link:https://github.com/dordsor21[@dordsor21], link:https://github.com/NotMyFault[@NotMyFault].
+
+== Signed artifacts
+
+Artifacts are released through GitHub actions and signed with link:https://github.com/NotMyFault[@NotMyFault]'s key. + 
+Expiry date: 21.01.2023 + 
+Renewing the key requires renewing the organization secrets. The regular process for renewing a GPG/PGP keypair applies.
