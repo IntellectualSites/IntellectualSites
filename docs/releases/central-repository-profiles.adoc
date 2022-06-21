@@ -17,8 +17,9 @@ This document lists our release profiles and the people with release permissions
 * com.intellectualsites (group header, not up for deployment)
 ** com.intellectualsites.arkitektonika
 ** com.intellectualsites.bom
-** com.intellectualsites.fastasyncvoxelsniper
+** com.intellectualsites.fastasyncvoxelsniper (sunset)
 ** com.intellectualsites.http
+** com.intellectualsites.informative-annotations
 ** com.intellectualsites.mvdwplaceholderapi
 ** com.intellectualsites.paster
 ** com.intellectualsites.prtree
